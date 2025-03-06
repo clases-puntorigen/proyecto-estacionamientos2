@@ -12,24 +12,58 @@ def principal():
         ui.button(text="Iniciar Sesion").props("flat").classes("text-white text-xs")
         ui.button(text="Registrarse").props("flat").classes("text-white text-xs")
 
-    
-    with ui.row().classes("space-x-4"):  # Contenedor que organiza las columnas en una fila
-        with ui.column().classes("bg-gray-300 p-4 "):  # Primera columna
-            ui.label("Columna 1")
-            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[200px] h-[200px]")
-            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[200px] h-[200px]") 
-            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[200px] h-[200px]")
-        with ui.column().classes("bg-gray-300 p-4 "):  # Segunda columna
-            ui.label("Columna 2")
-            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[200px] h-[200px]") 
-            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[200px] h-[200px]")
-            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[200px] h-[200px]")
-        with ui.column().classes("bg-gray-300 p-4 "):  # Tercera columna
-            ui.label("Columna 3")
-            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[200px] h-[200px]") 
-            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[200px] h-[200px]")
-            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[200px] h-[200px]")
+    """
+    with ui.column().classes("space-x-3 width=100%"):  
+        with ui.row().classes("bg-gray-300 p-4 w-full"): 
+            ui.label("Por Hora").classes("text-xl font-bold mb-4")
+            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]")
+            
+            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]") 
+            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]")
+        with ui.row().classes("bg-gray-300 p-4 w-full"): 
+            ui.label("Por Día").classes("text-xl font-bold mb-4")
+            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]") 
+            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]")
+            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]")
+        with ui.row().classes("bg-gray-300 p-4 w-full"):  
+            ui.label("semanal").classes("text-xl font-bold mb-4")
+            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]") 
+            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]")
+            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]")
+        with ui.row().classes("bg-gray-300 p-4 w-full"):  
+            ui.label("mensual").classes("text-xl font-bold mb-4")
+            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]") 
+            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]")
+            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]")
+    """
+    with ui.column().classes("items-center justify-center w-full space-y-4"):  
+        with ui.row().classes("bg-while-300 p-4 w-[80%] justify-center items-center"): 
+            ui.label("Por Hora").classes("text-xl font-bold mb-4")
+            with ui.row().classes("space-x-4 justify-center"):
+                ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]")
+                ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]") 
+                ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]")
 
+        with ui.row().classes("bg-while-300 p-4 w-[80%] justify-center items-center"): 
+            ui.label("Por Día").classes("text-xl font-bold mb-4")
+            with ui.row().classes("space-x-4 justify-center"):
+                ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]") 
+                ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]")
+                ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]")
+
+        with ui.row().classes("bg-while-300 p-4 w-[80%] justify-center items-center"):  
+            ui.label("Semanal").classes("text-xl font-bold mb-4")
+            with ui.row().classes("space-x-4 justify-center"):
+                ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]") 
+                ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]")
+                ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]")
+
+        with ui.row().classes("bg-while-300 p-4 w-[80%] justify-center items-center"):  
+            ui.label("Mensual").classes("text-xl font-bold mb-4")
+            with ui.row().classes("space-x-4 justify-center"):
+                ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]") 
+                ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]")
+                ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[400px] h-[400px]")
 
    
 
