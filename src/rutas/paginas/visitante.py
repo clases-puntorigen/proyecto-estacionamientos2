@@ -2,6 +2,7 @@ from nicegui_router import ui,page
 
 @ui.page("/visitante")
 
+
 def visitante():
     #menu
     with ui.header().classes("h-12 bg-[#0077B6] text-white flex items-center px-4 justify-between"):
