@@ -30,10 +30,12 @@ def estacionamiento():
         with ui.column():
             ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[350px] h-[400px]")
             ui.label("Detalle del estacionamiento").classes("text-lg font-bold")
+
             
         with ui.column():
             ui.label("Ubicación").classes("text-lg font-bold")
             ui.button("Reservar Estacionamiento", on_click=lambda: ui.notify("¡Envio a reserva!"))
+        
 
 
 

@@ -37,10 +37,16 @@ def principal():
 
 
     #---------------------------------------------------------------------------------------------#
-#banner
-    def banner():
-        with ui.row().classes("w-full bg-blue-500 text-white p-4 justify-center"):
-              ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-8 h-8 rounded-full items-center")
+#carrusel
+    with ui.carousel(animated=True, arrows=True, navigation=True).classes("w-full"):
+        with ui.carousel_slide().classes('p-0'):
+            ui.image('https://picsum.photos/id/30/1200/400').classes('w-full h-auto')
+        with ui.carousel_slide().classes('p-0'):
+            ui.image('https://picsum.photos/id/31/1200/400').classes('w-full h-auto')
+        with ui.carousel_slide().classes('p-0'):
+            ui.image('https://picsum.photos/id/32/1200/400').classes('w-full h-auto')
+
+
 
 
 
@@ -120,3 +126,12 @@ def principal():
                     ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-[350px] h-[350px]")
                     ui.label("Descripcion del estacionamiento")
                     ui.button("Reservar", on_click=estacionamiento).classes("bg-blue-500 text-white px-4 py-2 rounded-lg")
+
+
+    with ui.footer().classes("h-12 bg-[#0077B6] text-white items-center justify-center px-4 justify-between"):
+        ui.label("Contacto").classes("text-sm text-center")
+        ui.label("Correo: hola@gmail.com").classes("text-sm text-center")
+        ui.label("wsp: +56912345678").classes("text-sm text-center")
+        ui.space()
+        ui.button(text="Iniciar Sesion").props("flat").classes("text-white text-xs")
+        ui.button(text="Registrarse").props("flat").classes("text-white text-xs")
