@@ -1,6 +1,5 @@
 from nicegui_router import ui,page
 
-@page("/perfil")
-
+@page()
 def perfil():
     ui.label("hola")

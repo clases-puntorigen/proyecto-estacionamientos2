@@ -1,6 +1,6 @@
-from nicegui import ui
-@ui.page("/registro")
+from nicegui_router import page, ui
 
+@page()
 def formulario_registro():
     with ui.image("https://elcomercio.pe/resizer/JF4zBvpLD2JjnpJs5fKhFAwFNis=/1280x720/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/XVO6I5CHD5CUZGB5G57G5LVMFU.webp").classes(
         "absolute-full object-cover"

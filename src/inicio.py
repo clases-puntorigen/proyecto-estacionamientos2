@@ -10,7 +10,7 @@ async def startup_db_reservas_estacionamientos():
 
 server = Server(
     title='Reserva estacionamientos', 
-    routes_dir=Path(__file__).parent / "rutas"/"paginas",
+    routes_dir=Path(__file__).parent / "rutas",
     on_startup=startup_db_reservas_estacionamientos,
     ui={
         "language": "es"

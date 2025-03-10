@@ -1,8 +1,6 @@
 from nicegui_router import ui,page
 
-@ui.page("/visitante")
-
-
+@page()
 def visitante():
     #menu
     with ui.header().classes("h-12 bg-[#0077B6] text-white flex items-center px-4 justify-between"):
@@ -74,8 +72,3 @@ def visitante():
         ui.space()
         ui.button(text="Iniciar Sesion").props("flat").classes("text-white text-xs")
         ui.button(text="Registrarse").props("flat").classes("text-white text-xs")
-
-
-
-
-ui.run()

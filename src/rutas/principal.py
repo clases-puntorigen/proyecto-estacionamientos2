@@ -1,8 +1,9 @@
 from nicegui_router import ui,page
+from rutas.menu import menu_superior
 
-@ui.page("/principal")
-
+@page()
 def principal():
+    menu_superior()
     with ui.header().classes("h-12 bg-[#0077B6] text-white flex items-center px-7 justify-between"):
         with ui.row().classes("items-center"):
             ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-8 h-8 rounded-full items-center")
