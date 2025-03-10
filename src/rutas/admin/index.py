@@ -22,7 +22,7 @@ def formulario_login(on_submit):
         with ui.card_actions().style("background-color: #fff; padding-bottom: 10px;"):
             ui.button("Ingresar", on_click=on_login).props("flat").style("background-color: black; color: white !important;")
 
-@page("/admin")
+@page()
 async def login():
     with ui.image("https://elcomercio.pe/resizer/JF4zBvpLD2JjnpJs5fKhFAwFNis=/1280x720/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/XVO6I5CHD5CUZGB5G57G5LVMFU.webp").classes(
         "absolute-full object-cover"

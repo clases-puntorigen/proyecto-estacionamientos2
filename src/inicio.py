@@ -1,5 +1,6 @@
 from nicegui_router import Server
 from pathlib import Path
+from nicegui import app as app_nicegui
 import asyncio
 from async_easy_model import init_db, db_config
 from modelos.estacionamientos import Usuarios,Vehiculos,Horarios,Estacionamientos,Reserva,Pagos,TarifasEspeciales
@@ -10,7 +11,7 @@ async def startup_db_reservas_estacionamientos():
 
 server = Server(
     title='Reserva estacionamientos', 
-    routes_dir=Path(__file__).parent / "rutas"/"paginas",
+    routes_dir=Path(__file__).parent / "rutas",
     on_startup=startup_db_reservas_estacionamientos,
     ui={
         "language": "es"
@@ -19,6 +20,8 @@ server = Server(
 )
 
 app = server.app
+static_path = Path(__file__).parent / "assets"
+app_nicegui.add_static_files("/assets", static_path)
 
 if __name__ == '__main__':
     server.listen(port=8080)
