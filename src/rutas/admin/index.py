@@ -1,5 +1,6 @@
 from nicegui_router import page, ui, component, use_state
 
+@page()
 def formulario_login(on_submit):
     def on_login():
         if username.value and password.value:
