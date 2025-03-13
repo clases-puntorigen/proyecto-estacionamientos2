@@ -1,15 +1,20 @@
+from nicegui import app
 from nicegui_router import ui,page
+from componentes.menu_superior import menu_superior
 
 @page()
-def visitante():
+def index():
     #menu
-    with ui.header().classes("h-12 bg-[#0077B6] text-white flex items-center px-4 justify-between"):
-        with ui.row():
-            ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-8 h-8 rounded-full")
-            ui.label("AparcaYa").classes("text-sm font-bold margin=0")
-        ui.space()
-        ui.button(text="Iniciar Sesion").props("flat").classes("text-white text-xs")
-        ui.button(text="Registrarse").props("flat").classes("text-white text-xs")
+    if not "logeado" in app.storage.user:
+        app.storage.user["logeado"] = False
+    menu_superior()
+    #with ui.header().classes("h-12 bg-[#0077B6] text-white flex items-center px-4 justify-between"):
+    #    with ui.row():
+    #        ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-8 h-8 rounded-full")
+    #        ui.label("AparcaYa").classes("text-sm font-bold margin=0")
+    #    ui.space()
+    #    ui.button(text="Iniciar Sesion").props("flat").classes("text-white text-xs")
+    #    ui.button(text="Registrarse").props("flat").classes("text-white text-xs")
 
    #cuerpo
     with ui.column().classes("items-center justify-center w-full space-y-4"):  
