@@ -1,6 +1,6 @@
 from nicegui_router import ui, page
-from extras.menu_superior import menu_superior
-from extras.carousel import carousel, item as slide
+from componentes.menu_superior import menu_superior
+from componentes.carousel import carousel, item as slide
 
 
 def item(imagen="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s"):
@@ -31,7 +31,6 @@ def principal():
                 with ui.row().classes("space-x-4 justify-center"):
                     for _ in range(3):
                         item()
-
 
 #footer
     with ui.footer(bordered=False, fixed=False).classes("h-12 bg-[#0077B6] text-white items-center justify-center px-4 justify-between"):
