@@ -1,6 +1,7 @@
 from nicegui_router import ui,page
 from nicegui import app
 from componentes.menu_superior import menu_superior
+
 @page()
 def visitante():
     #menu

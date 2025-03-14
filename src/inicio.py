@@ -1,17 +1,21 @@
 from nicegui_router import Server
 from pathlib import Path
 from nicegui import app 
-import asyncio
+#import asyncio
 from async_easy_model import init_db, db_config
 from modelos.estacionamientos import Usuarios,Vehiculos,Horarios,Estacionamientos,Reserva,Pagos,TarifasEspeciales
 
 async def startup_db_reservas_estacionamientos():
-    await init_db()
-    print("inicio bd")
-
+    try:
+        await init_db()
+        print("inicio bd")
+    except:
+        print("Error al iniciar la base de datos")
+    
 server = Server(
     title='Reserva estacionamientos', 
     routes_dir=Path(__file__).parent / "rutas",
+    #on_startup=startup_db_reservas_estacionamientos,
     ui={
         "language": "es",
         "storage_secret": "reserva_estacionamientos",
@@ -49,9 +53,8 @@ def actualizar_usuarios_desconectados():
 
 app.on_connect(actualizar_usuarios_conectados)
 app.on_disconnect(actualizar_usuarios_desconectados)
-
-asyncio.run(startup_db_reservas_estacionamientos())
-
+app.on_startup(startup_db_reservas_estacionamientos)
+#asyncio.run(startup_db_reservas_estacionamientos())
 
 if __name__ == '__main__':
     server.listen(port=8080)

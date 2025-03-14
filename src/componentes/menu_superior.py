@@ -20,15 +20,15 @@ def menu_superior():
         usuarios_conectados()
         if app.storage.user["logeado"]:
             ui.space()
-            ui.button(text="Principal").props("flat").classes("text-white text-xs")
-            ui.button(text="Nosotros").props("flat").classes("text-white text-xs")
+            ui.button(text="Principal").props("flat").classes("text-white text-xs").on_click(lambda: ui.navigate.to("/principal"))
+            ui.button(text="Nosotros").props("flat").classes("text-white text-xs").on_click(lambda: ui.navigate.to("/nosotros"))
             with ui.row().classes("items-center"):
                 #imagen = ui.avatar(icon="img:https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("rounded-full")
                 imagen = ui.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig2f7PiM4oxIzBrLNzo0eI9P-YLCg&s").classes("w-8 h-8 rounded-full items-center")
                 with imagen:
                     with ui.menu() as menu:
-                        ui.menu_item("Perfil", on_click=lambda: ui.notify("Perfil"))
-                        ui.menu_item("Cerrar Sesion", on_click=lambda: menu.close)
+                        ui.menu_item("Perfil", on_click=lambda: ui.notify("Perfil")).on_click(lambda: ui.navigate.to("/perfil"))
+                        ui.menu_item("Cerrar Sesion", on_click=lambda: menu.close).on_click(lambda: ui.navigate.to("/"))
         else:
             ui.space()
             ui.button(text="Iniciar Sesion").props("flat").classes("text-white text-xs").on_click(lambda: ui.navigate.to("/login"))

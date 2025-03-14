@@ -4,7 +4,7 @@ from typing import List, Optional
 from datetime import datetime, date
 
 
-db_config.configure_sqlite("reservas_estacionamientos.db")
+db_config.configure_sqlite("reservas_estacionamientos2.db")
 
 class Usuarios(EasyModel, table=True):
     """
