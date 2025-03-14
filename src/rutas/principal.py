@@ -33,10 +33,11 @@ def principal():
                         item()
 
 #footer
-    with ui.footer(bordered=False, fixed=False).classes("h-12 bg-[#0077B6] text-white items-center justify-center px-4 justify-between"):
-        ui.label("Contacto").classes("text-sm text-center")
-        ui.label("Correo: hola@gmail.com").classes("text-sm text-center")
-        ui.label("wsp: +56912345678").classes("text-sm text-center")
-        ui.space()
-        ui.button(text="Iniciar Sesion").props("flat").classes("text-white text-xs")
-        ui.button(text="Registrarse").props("flat").classes("text-white text-xs")
+    with ui.footer():
+        with ui.row().classes('items-center'):
+            # Izquierda: Contacto, número y correo
+            with ui.column().classes('text-left'):
+                ui.label('Contacto:')
+                ui.label('Tel: +56 9 1234 5678')
+                ui.label('Email: contacto@empresa.cl')
+            
