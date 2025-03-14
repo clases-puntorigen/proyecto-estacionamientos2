@@ -1,5 +1,5 @@
 from nicegui_router import ui, page
-from componentes.menu_superior import menu_superior
+from componentes.menu_superior import menu_superior,footer
 from componentes.carousel import carousel, item as slide
 
 
@@ -32,12 +32,7 @@ def principal():
                     for _ in range(3):
                         item()
 
+
 #footer
-    with ui.footer():
-        with ui.row().classes('items-center'):
-            # Izquierda: Contacto, número y correo
-            with ui.column().classes('text-left'):
-                ui.label('Contacto:')
-                ui.label('Tel: +56 9 1234 5678')
-                ui.label('Email: contacto@empresa.cl')
+    footer()
             

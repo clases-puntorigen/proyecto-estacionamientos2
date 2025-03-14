@@ -33,3 +33,22 @@ def menu_superior():
             ui.space()
             ui.button(text="Iniciar Sesion").props("flat").classes("text-white text-xs").on_click(lambda: ui.navigate.to("/login"))
             ui.button(text="Registrarse").props("flat").classes("text-white text-xs").on_click(lambda: ui.navigate.to("/registro"))
+
+
+def footer():
+        with ui.footer(bordered=False, fixed=False).classes("h-24 bg-[#0077B6] text-white flex items-center justify-center px-4"):
+            with ui.row().classes("w-full max-w-4xl justify-between items-start"):
+                # Parte izquierda: Información de contacto
+                with ui.column().classes("items-start gap-1"):
+                    ui.label("Contacto").classes("text-sm font-medium")
+                    ui.label("Correo: hola@gmail.com").classes("text-sm")
+                    ui.label("WhatsApp: +56912345678").classes("text-sm")
+                
+                # Parte central: Términos y condiciones (como un enlace)
+                with ui.column().classes("items-center gap-1"):
+                    ui.link("Términos y condiciones", "/terminos-y-condiciones").classes("text-sm hover:underline")
+                
+                # Parte derecha: Un elemento adicional (por ejemplo, un ícono o logo)
+                with ui.column().classes("items-end gap-1"):
+                    ui.icon("thumb_up", size="sm").classes("text-white")
+                    ui.label("¡Síguenos!").classes("text-sm")
