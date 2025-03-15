@@ -1,6 +1,6 @@
 from nicegui_router import ui,page
 from nicegui import app
-from componentes.menu_superior import menu_superior
+from componentes.menu_superior import menu_superior,footer
 
 
 @page()
@@ -31,3 +31,8 @@ async def perfil():
         with ui.card_actions():
             ui.button("Editar perfil").on_click(lambda: ui.navigate.to("/editar_perfil"))
             ui.button("Volver").on_click(lambda: ui.navigate.to("/principal"))
+
+    
+
+    
+    footer()

@@ -1,8 +1,9 @@
 from nicegui_router import ui,page
 from modelos.estacionamientos import Vehiculos
-
+from componentes.menu_superior import menu_superior,footer
 @page()
 def registro_vehiculo():
+    menu_superior()
     with ui.image("https://elcomercio.pe/resizer/JF4zBvpLD2JjnpJs5fKhFAwFNis=/1280x720/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/XVO6I5CHD5CUZGB5G57G5LVMFU.webp").classes(
         "absolute-full object-cover"
     ):
@@ -33,7 +34,7 @@ def registro_vehiculo():
 
             ui.button("Registrar Vehiculo", on_click=on_submit).style('background-color: black; color: white; padding: 12px; width: 95%; border-radius: 5px; font-size: 16px;')
 
-        
+    footer()
 
 
          
