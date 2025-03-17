@@ -2,7 +2,6 @@ from nicegui_router import ui,page
 from nicegui import app
 from componentes.menu_superior import menu_superior,footer
 
-
 @page()
 async def perfil():
     menu_superior()
@@ -10,32 +9,6 @@ async def perfil():
         ui.navigate.to("/")
 
     perfil = app.storage.user["logeado_perfil"]
-
-    @ui.refreshable #para refrescar la pagina sola
-    def mostrar_perfil():    #se agrego funcion para poder llamarla despues
-        with ui.card(align_items="center").classes(
-            "absolute-center w-[500px] ma-0"
-        ).style(
-            "background-color: #FFF; padding:0 0 0 0;"
-        ):
-            with ui.card_section():
-                ui.label("Perfil").classes("text-h6 q-mb-xs text-center")
-            with ui.card_section():
-
-                ui.markdown(f"""
-                ## Datos Personales
-
-                - **Nombre**: {perfil["nombre"]}
-                - **Apellido**: {perfil["apellido"]}
-                - **Rut**: {perfil["rut"]}
-                - **Correo Electrónico**: {perfil["email"]}
-                - **Teléfono**: {perfil["telefono"]}
-            """)
-            with ui.card_actions():
-                ui.button("Volver").on_click(lambda: ui.navigate.to("/principal"))
-                
-
-    mostrar_perfil() # aca se llama
 
     def actualizar_datos(nuevos_datos): #funcion para poder, actualizar los datos, verifica los datos
         app.storage.user["logeado_perfil"] = nuevos_datos
@@ -63,5 +36,31 @@ async def perfil():
 
         ui.button("Guardar", on_click=guardar_datos_actualizados)
         ui.button("cancelar", on_click= dialog.close)
-    ui.button("Editar Perfil", on_click=dialog.open)
+
+    @ui.refreshable #para refrescar la pagina sola
+    def mostrar_perfil():    #se agrego funcion para poder llamarla despues
+        with ui.card(align_items="center").classes(
+            "absolute-center w-[500px] ma-0"
+        ).style(
+            "background-color: #FFF; padding:0 0 0 0;"
+        ):
+            with ui.card_section():
+                ui.label("Perfil").classes("text-h6 q-mb-xs text-center")
+            with ui.card_section():
+
+                ui.markdown(f"""
+                ## Datos Personales
+
+                - **Nombre**: {perfil["nombre"]}
+                - **Apellido**: {perfil["apellido"]}
+                - **Rut**: {perfil["rut"]}
+                - **Correo Electrónico**: {perfil["email"]}
+                - **Teléfono**: {perfil["telefono"]}
+            """)
+            with ui.card_actions():
+                ui.button("Editar Perfil", on_click=dialog.open)
+                ui.button("Volver").on_click(lambda: ui.navigate.to("/principal"))
+                
+
+    mostrar_perfil() # aca se llama
     footer()
