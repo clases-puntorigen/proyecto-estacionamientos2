@@ -29,9 +29,8 @@ class Vehiculos(EasyModel, table=True):
     color: str = Field(...,min_length=1, description="Color del Vehiculo")
     id_usuario: Optional[int] = Field(default=None, foreign_key="usuarios.id",description="Dueño del vehiculo")
 
-class Discapacitado(EasyModel, table=True):
+class Discapacitados(EasyModel, table=True):
 
-    __tablename__ = "discapacitados"
     id: Optional[int] = Field(default=None, primary_key=True, index=True)
     id_usuario: Optional[int] = Field(default=None, foreign_key="usuarios.id")
     folio: str = Field(...,min_length=10,description="Folio para personas discapacitadas")
@@ -65,7 +64,6 @@ class Reserva(EasyModel, table=True):
     """
     Reservas para los estacionamientos
     """
-    __tablename__ = "reservas"
     id: Optional[int] = Field(default=None, primary_key=True, index=True)
     id_usuario: Optional[int] = Field(default=None, foreign_key="usuarios.id")
     id_vehiculo: Optional[int] = Field(default=None, foreign_key="vehiculos.id")
