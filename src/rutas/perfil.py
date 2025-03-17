@@ -11,8 +11,8 @@ async def perfil():
 
     perfil = app.storage.user["logeado_perfil"]
 
-    @ui.refreshable
-    def mostrar_perfil():
+    @ui.refreshable #para refrescar la pagina sola
+    def mostrar_perfil():    #se agrego funcion para poder llamarla despues
         with ui.card(align_items="center").classes(
             "absolute-center w-[500px] ma-0"
         ).style(
@@ -35,11 +35,11 @@ async def perfil():
                 ui.button("Volver").on_click(lambda: ui.navigate.to("/principal"))
                 
 
-    mostrar_perfil()
+    mostrar_perfil() # aca se llama
 
-    def actualizar_datos(nuevos_datos):
+    def actualizar_datos(nuevos_datos): #funcion para poder, actualizar los datos, verifica los datos
         app.storage.user["logeado_perfil"] = nuevos_datos
-        mostrar_perfil.refresh()
+        mostrar_perfil.refresh() # actualiza la funcion 
 
     with ui.dialog() as dialog, ui.card():
         ui.label("Actualizar datos del perfil")
@@ -62,5 +62,6 @@ async def perfil():
             dialog.close()
 
         ui.button("Guardar", on_click=guardar_datos_actualizados)
+        ui.button("cancelar", on_click= dialog.close)
     ui.button("Editar Perfil", on_click=dialog.open)
     footer()
