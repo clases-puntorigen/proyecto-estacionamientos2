@@ -12,9 +12,6 @@ def item(imagen="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpSelqig
 @page()
 def principal():
     menu_superior()
-    #ver mapa interactivo para agregar
-    #----------------------------------------------------------------------------------------------#
-    #---------------------------------------------------------------------------------------------#
 #carrusel
 
     with carousel(tiempo=5):
@@ -32,7 +29,7 @@ def principal():
                     for _ in range(3):
                         item()
 
-
 #footer
     footer()
+
             
